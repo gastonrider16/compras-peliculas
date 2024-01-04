@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Celebrity Micrositio</title>
+    <!-- Enlace a Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <!-- Enlace a tu archivo de estilos personalizado -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Celebrity Micrositio</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="mostrarProductos()">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Galería</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contacto</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#" onclick="registrar()">Registrarse</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#" onclick="iniciarSesion()">Iniciar Sesion</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Portada -->
+    <header class="container text-center my-5">
+        <h1>Nombre del Celebridad</h1>
+        <p>Información esencial sobre el personaje.</p>
+        <!-- Agrega imágenes y elementos visuales relacionados aquí -->
+    </header>
+
+    <section class="container my-5">
+        <div class="row">
+            <!-- Sección de Login -->
+            <div class="col-md-6" id="seccionIniciarSesion" style="display: none;">
+                <h2>Iniciar Sesión</h2>
+                <form>
+                    <div class="mb-3">
+                        <label for="usuarioLogin" class="form-label">Usuario:</label>
+                        <input type="text" class="form-control" id="usuarioLogin" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="contrasenaLogin" class="form-label">Contraseña:</label>
+                        <input type="password" class="form-control" id="contrasenaLogin" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+                </form>
+            </div>
+
+            <!-- Sección de Registro -->
+            <div class="col-md-6" id="seccionRegistrar" style="display: none;">
+                <h2>Registrarse</h2>
+                <form>
+                    <div class="mb-3">
+                        <label for="usuarioRegistro" class="form-label">Usuario:</label>
+                        <input type="text" class="form-control" id="usuarioRegistro" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="contrasenaRegistro" class="form-label">Contraseña:</label>
+                        <input type="password" class="form-control" id="contrasenaRegistro" required>
+                    </div>
+                    <button type="submit" class="btn btn-success">Registrarse</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Productos -->
+    <section class="container my-5" id="seccionProductos" style="display: none;">
+        <div class="row">
+            <!-- Información del Producto -->
+            <div class="col-lg-6">
+                <h2>Producto Asociado</h2>
+                <img src="producto_asociado.jpg" alt="Imagen del producto asociado">
+                <p>Descripción detallada del producto.</p>
+                <!-- Agrega otros detalles relevantes del producto aquí -->
+            </div>
+
+            <!-- Botón de Compra -->
+            <div class="col-lg-6">
+                <h2>¡Lleva a Casa Este Producto!</h2>
+                <p>Precio: $XX.XX</p>
+                <button class="btn btn-success btn-lg">Comprar Ahora</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pasarela de Pago -->
+    <section class="container my-5">
+        <h2>Pasarela de Pago</h2>
+        <p>Selecciona tu método de pago preferido:</p>
+        <!-- Agregar opciones de pago aquí -->
+
+        <!-- Formulario de Información de Pago -->
+        <form>
+            <div class="mb-3">
+                <label for="nombreTarjeta" class="form-label">Nombre en la Tarjeta:</label>
+                <input type="text" class="form-control" id="nombreTarjeta" required>
+            </div>
+            <div class="mb-3">
+                <label for="numeroTarjeta" class="form-label">Número de Tarjeta:</label>
+                <input type="text" class="form-control" id="numeroTarjeta" required>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="fechaExpiracion" class="form-label">Fecha de Expiración:</label>
+                    <input type="text" class="form-control" id="fechaExpiracion" placeholder="MM/AA" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="cvv" class="form-label">CVV:</label>
+                    <input type="text" class="form-control" id="cvv" required>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Realizar Pago</button>
+        </form>
+    </section>
+
+    <!-- Confirmación de Compra -->
+    <section class="container my-5">
+        <h2>¡Compra Exitosa!</h2>
+        <p>Gracias por tu compra. Aquí están los detalles de tu transacción:</p>
+        <!-- Agregar detalles de la transacción aquí -->
+    </section>
+    <!-- Galería de Fotos -->
+    <section class="container my-5">
+        <h2>Galería de Fotos</h2>
+        <!-- Agregar una galería de fotos aquí -->
+    </section>
+
+    <!-- Formulario de Suscripción -->
+    <section class="container my-5">
+        <h2>Suscripción</h2>
+        <!-- Agregar un formulario de suscripción aquí -->
+    </section>
+
+    <!-- Pie de Página -->
+    <footer class="bg-dark text-light text-center py-3">
+        <p>&copy; 2023 Celebrity Micrositio</p>
+    </footer>
+
+    <script>
+        function mostrarProductos() {
+            var seccionProductos = document.getElementById("seccionProductos");
+            if (seccionProductos.style.display === "none") {
+                seccionProductos.style.display = "block";
+            } else {
+                seccionProductos.style.display = "none";
+            }
+        }
+    </script>
+    <script>
+        function registrar() {
+            var seccionRegistrar = document.getElementById("seccionRegistrar");
+            if (seccionRegistrar.style.display === "none") {
+                seccionRegistrar.style.display = "block";
+            } else {
+                seccionRegistrar.style.display = "none";
+            }
+        }
+    </script>
+    <script>
+        function iniciarSesion() {
+            var seccionIniciarSesion = document.getElementById("seccionIniciarSesion");
+            if (seccionIniciarSesion.style.display === "none") {
+                seccionIniciarSesion.style.display = "block";
+            } else {
+                seccionIniciarSesion.style.display = "none";
+            }
+        }
+    </script>
+
+    <!-- Enlace a Bootstrap JS y Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

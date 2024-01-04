@@ -1,0 +1,17 @@
+/* Estilos personalizados aquí */
+
+/* Coherencia Visual */
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+/* Elementos Visuales */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Adaptabilidad y Responsividad */
+@media (max-width: 768px) {
+    /* Estilos para tamaños de pantalla más pequeños */
+}

@@ -1,2 +1,2 @@
-# compras-peliculas
-Pagina web de compras de peliculas hecha en HTML5, JS, CSS y Bootstrap
+# compras-videojuegos
+Pagina web de compras de videojuegos hecha en HTML5, JS, CSS y Bootstrap.
